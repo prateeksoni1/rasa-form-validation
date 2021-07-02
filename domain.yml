@@ -1,0 +1,105 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - nominate_ops
+  - add_candidate
+  - delete_candidate
+  - select_all
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - remove_column
+  - rename_column
+  - show_nominees
+entities:
+  - PERSON
+  - emp_code
+  - name
+  - new_name
+  - number
+slots:
+  name:
+    type: any
+    influence_conversation: false
+  emp_code:
+    type: any
+    influence_conversation: false
+  number:
+    type: any
+    influence_conversation: false
+  email:
+    type: any
+    influence_conversation: false
+  nominees:
+    type: list
+    influence_conversation: false
+    # initial_value: None
+  justification:
+    type: any
+    influence_conversation: false
+responses:
+  utter_greet:
+    - text: Hey! How are you?
+  utter_cheer_up:
+    - text: 'Here is something to cheer you up:'
+      image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+    - text: Did that help you?
+  utter_happy:
+    - text: Great, carry on!
+  utter_goodbye:
+    - text: Bye
+  utter_iamabot:
+    - text: I am a bot, powered by Rasa.
+  utter_ask_name:
+    - text: Tell me the candidate's name
+  utter_ask_emp_code:
+    - text: Tell me the candidate's Employee Code
+  utter_ask_number:
+    - text: Tell me the candidate's Number
+  utter_ask_email:
+    - text: Tell me the candidate's email
+  utter_ask_nominees:
+    - text: Enter name of nominees
+  utter_ask_justification:
+    - text: Enter justification
+  utter_adding_candidate:
+    - text: Adding candidate...
+  utter_display_details:
+    - text: 'Thanks! Saved info - Name: {name}, Emp Code: {emp_code}, number: {number} Email: {email}.'
+  utter_adding_nominees:
+    - text: Adding nominees...
+actions:
+  - action_add_candidate
+  - action_add_nominees
+  - action_delete_candidate
+  - action_remove_column
+  - action_rename_column
+  - action_select_all
+  - action_show_nominees
+  - utter_adding_nominees
+  - validate_nominate_ops_form
+forms:
+  add_candidate_form:
+    required_slots:
+      name:
+        - type: from_text
+      emp_code:
+        - type: from_text
+      number:
+        - type: from_text
+      email:
+        - type: from_text
+  nominate_ops_form:
+    required_slots:
+      nominees:
+        - type: from_entity
+          entity: PERSON
+      justification:
+        - type: from_text

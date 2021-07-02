@@ -1,0 +1,72 @@
+version: '2.0'
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Add candidate form
+    steps:
+      - intent: add_candidate
+      - action: add_candidate_form
+      - active_loop: add_candidate_form
+
+  - rule: Submit add candidate form
+    condition:
+      - active_loop: add_candidate_form
+    steps:
+      - action: add_candidate_form
+      - active_loop: null
+      - action: utter_adding_candidate
+      - action: action_add_candidate
+      - action: action_restart
+
+  - rule: delete candidate
+    steps:
+      - intent: delete_candidate
+      - action: action_delete_candidate
+      - action: action_restart
+
+  - rule: select all candidates
+    steps:
+      - intent: select_all
+      - action: action_select_all
+
+  - rule: select all nominees
+    steps:
+      - intent: show_nominees
+      - action: action_show_nominees
+
+  - rule: Rename column
+    steps:
+      - intent: rename_column
+      - action: action_rename_column
+      - action: action_restart
+
+  - rule: Remove column
+    steps:
+      - intent: remove_column
+      - action: action_remove_column
+      - action: action_restart
+
+  - rule: Add nominees form
+    steps:
+      - intent: nominate_ops
+      - action: nominate_ops_form
+      - active_loop: nominate_ops_form
+
+  - rule: Submit add nominees form
+    condition:
+      - active_loop: nominate_ops_form
+    steps:
+      - action: nominate_ops_form
+      - active_loop: null
+      - action: utter_adding_nominees
+      - action: action_add_nominees
+      - action: action_restart

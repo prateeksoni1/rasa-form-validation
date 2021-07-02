@@ -1,0 +1,182 @@
+version: '2.0'
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+  - intent: goodbye
+    examples: |
+      - good afternoon
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+  - intent: add_candidate
+    examples: |
+      - add candidate
+      - add candidate to database
+      - insert a candidate
+      - add a new candidate
+      - add a candidate
+  - intent: select_all
+    examples: |
+      - Show me list of all candidates
+      - Give me a list of all candidates
+      - Display all candidates
+      - Display all entries
+      - Show me all the candidates
+      - Show everyone
+      - show details
+      - show records
+  - intent: delete_candidate
+    examples: |
+      - Delete [Prateek](PERSON) from records
+      - Delete [Jasmeet](PERSON) from records
+      - Delete [Aakansha](PERSON) from records
+      - Delete [Sakshi](PERSON) from records
+      - Delete [0010KK](emp_code) from records
+      - Delete [0011LL](emp_code) from records
+      - Delete [0100KA](emp_code) from records
+      - Delete [1011QW](emp_code) from records
+      - Delete [1001YU](emp_code) from records
+      - Delete [0100GH](emp_code) from records
+      - Drop [Jasmeet](PERSON)
+      - Drop [Prateek Soni](PERSON)
+      - Drop [Aakansha](PERSON)
+      - Drop [Sakshi](PERSON)
+      - Drop [Tinkumoni](PERSON)
+      - Drop [0010KK](emp_code)
+      - Drop [0011LL](emp_code)
+      - Drop [0100KA](emp_code)
+      - Drop [1011QW](emp_code)
+      - Drop [1001YU](emp_code)
+      - Drop [0100GH](emp_code)
+      - Remove [Paras](PERSON)
+      - Remove [John](PERSON)
+      - Remove [Anshu](PERSON)
+      - Remove [Yuganshu Soni](PERSON)
+      - Remove [Uddaishya](PERSON)
+      - Remove [Rachit](PERSON)
+      - Remove [0010KK](emp_code)
+      - Remove [0011LL](emp_code)
+      - Remove [0100KA](emp_code)
+      - Remove [1011QW](emp_code)
+      - Remove [1001YU](emp_code)
+      - Remove [0100GH](emp_code)
+      - remove [jasmeet](PERSON) from records
+      - remove [prateek](PERSON) from records
+      - remove [aakansha](PERSON) from records
+      - remove [sakshi aggarwal](PERSON) from records
+      - remove [tinkumoni](PERSON) from records
+      - remove [0010KK](emp_code) from records
+      - remove [0011LL](emp_code) from records
+      - remove [0100KA](emp_code) from records
+      - remove [1011QW](emp_code) from records
+      - remove [1001YU](emp_code) from records
+      - remove [0100GH](emp_code) from records
+  - intent: rename_column
+    examples: |
+      - rename [name](name) to [user name](new_name)
+      - rename [first name](name) to [full name](new_name)
+      - rename [gender](name) to [sex](new_name)
+      - rename [name](name) to [full name](new_name)
+  - intent: remove_column
+    examples: |
+      - remove [name](name) from data
+      - remove [age](name) from data
+      - delete [gender](name) from table
+      - remove [number](number) from table
+      - delete [number](number) from table
+      - delete [full name](name) from table
+      - delete [full name](new_name) from table
+  - intent: nominate_ops
+    examples: |
+      - nominate a candidate
+      - nominate [Prateek](PERSON)
+      - nominate [Prateek](PERSON) and [Jasmeet](PERSON)
+      - nominate [Arpit](PERSON)
+      - nominate an employee
+      - nominate [prateek](PERSON) and [jasmeet](PERSON)
+      - nominate [prateek](PERSON)
+      - nominate [prateek](PERSON), [jasmeet](PERSON) and [arpit](PERSON)
+  - intent: show_nominees
+    examples: |
+      - Show me list of all nominees
+      - Give me a list of all nominees
+      - Display all nominees
+      - Show me all the nominees
+      - Show nominees
+      - show details of nominees
+      - show records of nominees
